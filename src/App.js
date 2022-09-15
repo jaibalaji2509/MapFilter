@@ -1,23 +1,53 @@
-import logo from './logo.svg';
 import './App.css';
+import React from 'react';
 
 function App() {
+
+  const simple =[
+    {
+    id:1,
+      name: "Jai",
+    designation: "Software Engineer"
+  },
+    {
+    id:2,
+      name: "Balaji",
+    designation: "Software Engineer"
+  },
+    {
+    id:3,
+      name: "Raj",
+    designation: "Software Engineer"
+  },
+    {
+    id:4,
+      name: "Kalai",
+    designation: "Software Engineer"
+  },
+    {
+    id:5,
+      name: "Chelvan",
+    designation: "Software Engineer"
+  },
+]
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        {
+          simple.length &&
+          simple
+          .slice(0,3)
+          .map((user)=>{
+            return (
+              <div key={user.id}>
+                <p>
+                  <strong>{user.name}</strong>
+                </p>
+                <p>{user.designation}</p>
+              </div>
+            );
+          })
+        }
     </div>
   );
 }
