@@ -48,6 +48,22 @@ function App() {
             );
           })
         }
+        <hr className='paddlr'/>
+        {
+          simple.length &&
+          simple
+          .filter((user)=>user.id === 4 || user.id === 5)
+          .map((user)=>{
+            return (
+              <div key={user.id}>
+                <p>
+                  <strong>{user.name}</strong>
+                </p>
+                <p>{user.designation}</p>
+              </div>
+            );
+          })
+        }
     </div>
   );
 }
